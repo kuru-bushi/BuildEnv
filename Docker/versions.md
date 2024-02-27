@@ -22,7 +22,10 @@ https://www.kkaneko.jp/tools/wsl/wsl_tensorflow2.html
 ## docker containier が recreate される問題
 - 別プロジェクトでも同じディレクトリ名だとコンテナが置き換わってしまう
 - 対処方法
-    - 1. プロジェクト名を -p で指定
+    - 1. プロジェクト名を -p で指定(?正しいか不明)
     - 2. ディレクトリごとにドッカーファイルを作成
 - 参考
     - https://qiita.com/satons/items/0597d2be64a56eaf4f89
+
+
+
