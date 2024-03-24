@@ -10,3 +10,7 @@ is not a block device.
 `
 sudo mount --bind {マウント元} {マウント先}
 `
+
+
+
+
