@@ -1,2 +1,7 @@
 *-build/*
 build
+*.csv
+opencv/*
+opencv-bin/*
+opencv_contrib
+__pycache__
