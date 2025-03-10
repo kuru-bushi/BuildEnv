@@ -27,5 +27,14 @@ sudo make
 ```
 
 
+# build
+```
+cd Src/libs
+git clone https://github.com/eigenteam/eigen-git-mirror
 
+mkdri build
+cd build
+sudo cmake ..
+sudo make
+```
 

@@ -2,7 +2,7 @@
 # ビルドと実行
 ```
 # docker build -t {イメージ名} {Dockerfile のパスがあるディレクトリ}
-docker build -t cpp_tutorial .
+f
 
 # 
 docker run -t -i -d  -v $(pwd):/home --name cpp_tutorial_cnt cpp_tutorial /bin/bash

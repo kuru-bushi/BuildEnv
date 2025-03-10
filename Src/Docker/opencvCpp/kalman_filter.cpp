@@ -1,3 +1,4 @@
+// 未完成 OpenCV によるコンピュータビジョン・機械学習入門
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string>
@@ -82,4 +83,5 @@ int main()
      } 
     
     
+
 }
