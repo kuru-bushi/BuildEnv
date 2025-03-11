@@ -1,11 +1,18 @@
+# 概要
+- 各ディレクトリについて
+```
+libs: C++ のライブラリのビルド用ディレクトリ。libs/{library}/build ディレクトリでビルド
+data: Python, C++ のデータ保存用ディレクトリ
+その他: ディレクトリ名のナレッジのスクリプトを保存
+```
+
+
 
 # build
-```
-git clone https://github.com/shazraz/Extended-Kalman-Filter.git
-```
 
 ## Extended-Kalman-Filter
-
+- カルマンフィルタのチュートリアル
+- shell を実行することで解析結果が画像で保存される
 ```
 https://github.com/uNetworking/uWebSockets.git
 git clone https://github.com/uWebSockets/uWebSockets
@@ -55,12 +62,11 @@ https://docs.ultralytics.com/ja/datasets/detect/coco/#dataset-yaml
 wget http://images.cocodataset.org/zips/val2017.zip
 参考: https://gist.github.com/mkocabas/a6177fc00315403d31572e17700d7fd9
 
-
 ```
 
 
 ## pybind
 - python から C+ の呼び出し。.so ファイルをインポート
 ```
-README参照
+pybind/README参照
 ```
