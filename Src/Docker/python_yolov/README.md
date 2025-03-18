@@ -27,36 +27,41 @@ mv /ultralytics/runs/detect/train7/weights/last.pt ./yolo8n.pt
 yolo task=detect mode=export model=yolov8.pt format=onnx opset=13
 
 
-# predict
-DeepSparse は yolov11 に公式に対応できていないという旨のイシューを見つけた(2025/3/12)
-https://github.com/ultralytics/ultralytics/issues/17528
-
-## (暫定策)今の DeepSparse だとエラーが出る。古いバージョンに戻す?
-## DeepSparse は Intelでしか動かない。 M1では動作しない。
-python -m pip install -U ultralytics==8.0.124
-python3 prediction_onnx.py
-
-
 # transformation ONNX
+## (追記)DeepSparse は Intelでしか動かない。 M1では動作しない。
 ## pytorch の load_dict でロードして onnx に変換する必要がある。yolo は CLI で全て完結できる。
 ## yolo11n.onnx が出力される
 yolo export model=yolo11n.pt format=onnx
 ```
 
-- 量子化(Deepsparse)
+- 推論と量子化(Deepsparse)
 ```
+# predict
+# DeepSparse は yolov11 に公式に対応できていないという旨のイシューを見つけた(2025/3/12)
+# https://github.com/ultralytics/ultralytics/issues/17528
+
+## (暫定策)今の DeepSparse だとエラーが出る。古いバージョンに戻す?
+## (追記)DeepSparse は Intelでしか動かない。 M1では動作しない。
+python -m pip install -U ultralytics==8.0.124
+python3 prediction_onnx.py
+
 # Deepsparse で量子化(Intel で動作(未検証))
 # https://docs.ultralytics.com/ja/integrations/neural-magic/#step-2-exporting-yolo11-to-onnx-format
 python -m pip install deepsparse[yolov8]
 
 # ベンチマーク
 deepsparse.benchmark model_path="/home/python_yolov/yolo11n.onnx" --scenario=sync --input_shapes="[1,3,640,640]"
+
+# 量子化
+(未調査) 量子化して保存することはできない? 実行時のみ?
 ```
-- 量子化
+
+- 量子化(ONNX)
 ```
 $ python -m pip install onnx onnxruntime onnxconverter-common
 $ python quantization_onnx.py
 ```
+
 
 # 可視化
 - QOperator
@@ -76,3 +81,7 @@ https://github.com/ultralytics/assets/releases/download/v0.0.0/coco8.zip
 # huggingface のモデルを ONNX に変換
 https://docs.neuralmagic.com/guides/onnx/
 ```
+
+
+
+

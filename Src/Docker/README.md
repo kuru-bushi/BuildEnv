@@ -9,6 +9,12 @@ data: Python, C++ のデータ保存用ディレクトリ
 
 
 # build
+## python docker(python3_10_0/Dockerfile)
+```
+docker build -t {イメージ名} {Dockerfile のパスがあるディレクトリ}
+
+docker run -it -d -v $(pwd):/home --name python_test_cnt python_test /bin/bash
+```
 
 ## Extended-Kalman-Filter
 - カルマンフィルタのチュートリアル
@@ -70,3 +76,9 @@ wget http://images.cocodataset.org/zips/val2017.zip
 ```
 pybind/README参照
 ```
+
+
+
+
+
+
